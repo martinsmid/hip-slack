@@ -1,12 +1,12 @@
 # hip-slack
 A hipchat web app addon to have slack-like keyboard shortcuts for navigating channels.
 
-# Keys
-The official hipchat app for linux does not have keyboard shortcut for jumping to room/people with unread messages. This little script adds this shortcuts:
-    - Alt + Shift + Arrow(Up|Down) - jump to previous/next unread room/people
-    - Alt + Arrow(Up|Down) - jump to previous/next room/people
+# keys
+The official hipchat app for linux does not have keyboard shortcut for jumping to room/people with unread messages. This little script adds this shortcuts
+* Alt + Shift + Arrow(Up|Down) - jump to previous/next unread room/people
+* Alt + Arrow(Up|Down) - jump to previous/next room/people
 
-# Installation
+# installation
 To run this I am using the [Custom JavaScript for Websites 2](https://chrome.google.com/webstore/detail/custom-javascript-for-web/ddbjnfjiigjmcpcpkmhogomapikjbjdk) Chrome extension to inject custom javascript into a specific website.
 
 - Install the Chrome extension from [this link](https://chrome.google.com/webstore/detail/custom-javascript-for-web/ddbjnfjiigjmcpcpkmhogomapikjbjdk)
