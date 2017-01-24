@@ -16,4 +16,6 @@ To run this I am using the [Custom JavaScript for Websites 2](https://chrome.goo
 - Paste the content of [hip-slack-addon.js](https://raw.githubusercontent.com/martinsmid/hip-slack/master/hip-slack-addon.js) into the extension text area
 - Select to inject also jQuery
 - Save
-- Optionally, you can create a separate browser-app from this UI by navigating `Chrome menu / More tools / Add to desktop`
+- Optionally, you can create a separate browser-app from this UI by navigating 
+
+`Chrome menu / More tools / Add to desktop`
