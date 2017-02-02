@@ -17,3 +17,6 @@ To run this I am using the [Custom JavaScript for Websites 2](https://chrome.goo
 - Select to inject also jQuery
 - Save
 - Optionally, you can create a separate browser-app from this UI by navigating `Chrome menu / More tools / Add to desktop`
+
+# custom style
+I have also modified the style of hipchat a little. I am not strong at UI design, but I didn't like the default thin fonts and made the rooms/people labels more dense So more of the text fits on the screen. The source is in [dark.css](./dark.css) and requires another chrome plugin, called [Stylish](https://chrome.google.com/webstore/detail/stylish-custom-themes-for/fjnbnpbmkenffdnngjfgmeleoegfcffe?utm_source=chrome-app-launcher-info-dialog), for the style to be injected into pages
