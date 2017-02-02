@@ -6,31 +6,38 @@ function native_click(el)
     els_anchor.dispatchEvent(clickEvent);
 }
 
+function step(current, list, step) {
+    var current_index = list.index(current);
+    var new_index = (current_index + step + list.length) % list.length
+    return $(list[new_index]);
+}
+
 $(document).keydown(function(event) {
-    if (event.altKey === true && event.shiftKey === true) {
-        if (event.key == 'ArrowUp') {
-            native_click($('.hc-tab.aui-nav-selected').prevAll('.hc-has-badge').first());
-        }
-        else if (event.key == 'ArrowDown') {
-            native_click($('.hc-tab.aui-nav-selected').nextAll('.hc-has-badge').first());
+    if (event.altKey === true && event.shiftKey === true &&
+            (event.key == 'ArrowUp' || event.key == 'ArrowDown'))
+    {
+        var target_list = $('.hc-tab.aui-nav-selected, .hc-has-badge');
+        if (target_list.length > 1) {
+            if (event.key == 'ArrowUp') {
+                var next = step($('.hc-tab.aui-nav-selected')[0], target_list, -1)
+            }
+            else if (event.key == 'ArrowDown') {
+                var next = step($('.hc-tab.aui-nav-selected')[0], target_list, 1)
+            }
+            native_click(next);
         }
     }
-    else if (event.altKey === true && event.shiftKey === false)
+    else if (event.altKey === true && event.shiftKey === false &&
+            (event.key == 'ArrowUp' || event.key == 'ArrowDown'))
     {
-        var selected = $('.hc-tab.aui-nav-selected')[0];
-        var target_list = $('.hc-room').toArray().concat($('.hc-person').toArray());
-        var current_index = target_list.indexOf(selected);
+        var target_list = $('.hc-room, .hc-person');
 
         if (event.key == 'ArrowUp') {
-            new_index = (current_index - 1 + target_list.length) % target_list.length
-            var next = $(target_list[new_index]);
-            native_click(next);
+            var next = step($('.hc-tab.aui-nav-selected')[0], target_list, -1)
         }
         else if (event.key == 'ArrowDown') {
-            new_index = (current_index + 1) % target_list.length
-            var next = $(target_list[new_index]);
-            native_click(next);
+            var next = step($('.hc-tab.aui-nav-selected')[0], target_list, 1)
         }
+        native_click(next);
     }
 })
-
